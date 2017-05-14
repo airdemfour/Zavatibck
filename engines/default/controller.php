@@ -27,9 +27,6 @@ class CController extends ZController{
 			$today = date('d/m/Y');
 			$tmp["page_title"] = "Dashboard";
 			$tmp["page_subtitle"] = "dashboard & statistics";
-			$tmp["page_controller"] = ucfirst($this->uri->controller);
-			$tmp["page_method"] = ucfirst($this->uri->method);
-
 			$tmp["today"] = $today;
 			self::render($tmp,"index");
 		}	

@@ -1,0 +1,27 @@
+ <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="color-line"></div>
+        <div class="modal-header text-center">
+            <h4 class="modal-title">{{page_title}}</h4>
+            <small class="font-bold">{{page_subtitle}}</small>
+        </div>
+        <form method="POST" action="{{dir}}/admin/new_user">
+            <div class="modal-body">
+               <p><input type="text" placeholder="First Name" class="form-control" name="first_name"></p>
+               <p><input type="text" placeholder="Last Name" class="form-control" name="last_name"></p>
+               <p><input type="text" placeholder="User Name" class="form-control" name="user_name"></p>
+                <p><input type="text" placeholder="Email" class="form-control" name="email"></p>
+                <p><select class="form-control m-b" name="role">
+               {{roles_list}}
+            </select></p>
+               <p><input type="text" placeholder="6 digits Password" class="form-control" name="password"></p>
+               <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+    </div>
+</form>
+</div>
+</div>

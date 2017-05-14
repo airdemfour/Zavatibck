@@ -71,9 +71,10 @@ class User extends Zedek{
 		return $query->fetchObject()->name;
 	}
 
-	function create_user(){
+	function create_new_user(){
 		$db = self::orm()->pdo;
-		$q1 = "insert into users (firstname, lastname, username, password, role) values (:firstname, :lastname, :username, :password, :role)";
+		$q1 = "insert into user (first_name, last_name, user_name, email, password) values (:firstname, :lastname, :username, :email, :password)";
+		$q2 = "insert into user_role (user, role) values (:user, :role)";
 		$datecreated = date("Y-m-d H:i:s");
 
 		$password = $_POST["password"];
@@ -82,15 +83,35 @@ class User extends Zedek{
 		try {
 			$db->begintransaction();
 			$query = $db->prepare($q1);
-			$query->bindParam(':firstname', $_POST["firstname"]);
-			$query->bindParam(':lastname', $_POST["lastname"]);
-			$query->bindParam(':username', $_POST["username"]);
+			$query->bindParam(':firstname', $_POST["first_name"]);
+			$query->bindParam(':lastname', $_POST["last_name"]);
+			$query->bindParam(':username', $_POST["user_name"]);
+			$query->bindParam(':email', $_POST["email"]);
 			$query->bindParam(':password', $password);
-			$query->bindParam(':role', $_POST["role"]);
 			$query->execute();
+			$userid = $db->lastInsertId(); 
+			$query2 = $db->prepare($q2);
+			$query2->bindParam(':user', $userid);
+			$query2->bindParam(':role', $_POST["role"]);
+			$query2->execute();
 			$db->commit();
 		} catch (Exception $e) {
 			echo "Cannot create user ".$e->getMessage();
+			$db->rollback();
+		}
+
+	}
+	function create_new_role(){
+		$db = self::orm()->pdo;
+		$q1 = "insert into roles (name) values (:role)";
+		try {
+			$db->begintransaction();
+			$query = $db->prepare($q1);
+			$query->bindParam(':role', $_POST["name"]);
+			$query->execute();
+			$db->commit();
+		} catch (Exception $e) {
+			echo "Cannot create role ".$e->getMessage();
 			$db->rollback();
 		}
 
@@ -113,7 +134,7 @@ class User extends Zedek{
 
 	function get_users() {
 		$db = self::orm()->pdo;
-		$q = "select firstname, lastname, username, roles.role from roles join users on users.role = roles.id";		
+		$q = "select first_name, last_name, email, user_name, roles.name as role from user join user_role on user.id = user_role.user join roles on roles.id = user_role.role";		
 		try {
 			$query = $db->prepare($q);
 			$query->execute();
@@ -121,8 +142,56 @@ class User extends Zedek{
 			echo "Cannot get Users".$e->getMessage();
 		}
 		$users = $query->fetchAll();
-		return $users;
+		$output = "";
+		foreach ($users as $user) {
+			$output.= "<tr>
+			<td>{$user["first_name"]}</td>
+			<td>{$user["last_name"]}</td>
+			<td>{$user["user_name"]}</td>
+			<td>{$user["role"]}</td>
+			<td>{$user["email"]}</td>
+			<td>edit</td>
+			</tr>";
+		}
+		return $output;
 	}
+
+
+	function get_roles() {
+		$db = self::orm()->pdo;
+		$q = "select id, name as role from roles";		
+		try {
+			$query = $db->prepare($q);
+			$query->execute();
+		} catch (Exception $e) {
+			echo "Cannot get Roles".$e->getMessage();
+		}
+		$roles = $query->fetchAll();
+		$output = "";
+		foreach ($roles as $role) {
+			$output.= "<tr><td>{$role["role"]}</td><td><a href='#'><i class='fa fa-edit'></i> Edit</a></td></tr>";
+		}
+		return $output;
+	}
+
+
+	function get_roles_list() {
+		$db = self::orm()->pdo;
+		$q = "select id, name as role from roles";		
+		try {
+			$query = $db->prepare($q);
+			$query->execute();
+		} catch (Exception $e) {
+			echo "Cannot get Roles".$e->getMessage();
+		}
+		$roles = $query->fetchAll();
+		$output = "";
+		foreach ($roles as $role) {
+			$output.= "<option value='{$role["id"]}'>{$role["role"]}</option>";
+		}
+		return $output;
+	}
+
 
 	function get_users_list() {
 		$db = self::orm()->pdo;

@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="{{theme}}/vendor/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="{{theme}}/vendor/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="{{theme}}/vendor/animate.css/animate.css" />
+    <link rel="stylesheet" href="{{theme}}/vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{theme}}/vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="{{theme}}/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="{{theme}}/fonts/pe-icon-7-stroke/css/helper.css" />
+    <link rel="stylesheet" href="{{theme}}/styles/style.css">
+<div class="content">
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div class="panel-tools">
+                     <button href="{{dir}}/admin/new_role" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> New</button>
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>                     
+                </div>
+                User Roles
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                <table cellpadding="1" cellspacing="1" class="table table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Options</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {{roles}}
+                    </tbody>
+                </table>
+</div>
+
+            </div>
+            <div class="panel-footer">
+                Roles
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div class="panel-tools">
+                    <button href="{{dir}}/admin/new_user" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#new_user"><i class="fa fa-plus"></i> New</button>
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                </div>
+                Users
+            </div>
+            <div class="panel-body">
+                <table id="example2" class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Surname</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{users}}
+                </tbody>
+                </table>
+
+
+            </div>
+            <div class="panel-footer">
+               Users
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title">Modal title</h4>
+                                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<div class="modal fade" id="new_user" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title">Modal title</h4>
+                                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!-- Vendor scripts -->
+<script src="{{theme}}/vendor/jquery/dist/jquery.min.js"></script>
+<script src="{{theme}}/vendor/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{theme}}/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="{{theme}}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{theme}}/vendor/metisMenu/dist/metisMenu.min.js"></script>
+<script src="{{theme}}/vendor/iCheck/icheck.min.js"></script>
+<script src="{{theme}}/vendor/sparkline/index.js"></script>
+<!-- DataTables -->
+<script src="{{theme}}/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="{{theme}}/vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- DataTables buttons scripts -->
+<script src="{{theme}}/vendor/pdfmake/build/pdfmake.min.js"></script>
+<script src="{{theme}}/vendor/pdfmake/build/vfs_fonts.js"></script>
+<script src="{{theme}}/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="{{theme}}/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="{{theme}}/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{{theme}}/vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<!-- App scripts -->
+<script src="{{theme}}/scripts/homer.js"></script>
+
+
+<script>
+
+    $(function () {
+        $('#example2').dataTable();
+
+    });
+
+</script>
