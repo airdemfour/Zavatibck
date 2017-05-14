@@ -1,0 +1,10 @@
+{
+    "name": "openimo/zedekframework",
+    "description": "PHP MVC web development framework",
+    "require": {
+        "php": ">=5.4.0"
+    }, 
+    "license": "Openimo", 
+    "keywords": ["framework", "mvc", "orm", "templating", "configuration", "convention", "php", "unit test"],
+    "type": "project"
+}

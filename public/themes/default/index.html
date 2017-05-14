@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Zedek Framework</title>
+    <meta name="description" content="Zedek Framework">
+    <meta name="keywords" content="Default template">
+    <link rel="shortcut icon" href="{{theme}}/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="{{theme}}/assets/img/apple-touch-icon.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{theme}}/assets/img/apple-touch-icon-72x72.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{theme}}/assets/img/apple-touch-icon-114x114.jpg">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{common}}/stylesheets/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{common}}/stylesheets/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{theme}}/assets/css/font-lineicons.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{theme}}/assets/css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{theme}}/assets/css/toastr.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{theme}}/assets/css/style.css" type="text/css" media="all" />
+    
+    <!--[if lt IE 9]>
+        <script src="{{theme}}/assets/js/html5.js"></script>
+        <script src="{{theme}}/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      li.active {
+        border: solid 1px #f0f0f0;
+      }
+      a.foo {
+        color: #000;
+        font-family: "Lato";
+        font-size: 1.5em;
+        font-weight: lighter;
+      }
+    </style>
+</head>
+
+<body id="landing-page">
+
+        
+    <header>
+        <nav class="navigation navigation-header fixmenu-clone fixmenu-stick">
+            <div class="container">
+                <div class="navigation-brand">
+                    <div>
+                        <a href="{{dir}}/" class="foo">Zedek Framework</a>
+                        <span class="sr-only"></span>
+                    </div>
+                    <button class="navigation-toggle visible-xs" type="button" data-toggle="dropdown" data-target=".navigation-navbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navigation-navbar">
+                    <ul class="navigation-bar navigation-bar-right">
+                        <li class=""><a href="{{dir}}/">Home</a></li>
+                        <li class=""><a href="{{dir}}/about">About</a></li>
+                        <li><a href="{{dir}}/contact">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+    <a id="showHere"></a>
+    
+    <hr class="no-margin" />
+    <div style="height:40px"></div>    
+    <section id="features" class="section inverted">
+        <div class="container">
+            <div class="section-content">
+                <div id="featuredTab">
+                    <ul class="list-unstyled animated " data-animation="fadeInRight">
+                      <li class="active">
+                          <a href="" data-toggle="tab">
+                              <div class="tab-info">
+                                  <div class="tab-title">Congrats!</div>
+                                  <div class="tab-desc">...you successfully installed {{sub_version}}.</div>
+                              </div>
+                              <!--<div class="tab-icon"><span class="icon icon-multimedia-20"></span></div>-->
+                          </a>
+                      </li>
+                      <li class="active">
+                          <a href="" data-toggle="tab">
+                              <div class="tab-info">
+                                  <div class="tab-title">Next Step</div>
+                                  <div class="tab-desc">...explore the features including the ORM and Templating</div>
+                              </div>
+                              <!--<div class="tab-icon"><span class="icon icon-seo-icons-27"></span></div>-->
+                          </a>
+                      </li>
+                      <li class="active">
+                          <a href="" data-toggle="tab">
+                              <div class="tab-info">
+                                  <div class="tab-title">Finally</div>
+                                  <div class="tab-desc">...deploy a world class application with ease.</div>
+                              </div>
+                              <!-- <div class="tab-icon"><span class="icon icon-seo-icons-28"></span></div>-->
+                          </a>
+                      </li>
+                    </ul>
+                    
+                    <div class="tab-content animated" data-animation="fadeInLeft">
+                      <div class="tab-pane in active" id="home"><img src="{{theme}}/assets/img/features/rich_features_1.png" class="img-responsive animated " data-animation="fadeInLeft" alt="macbook" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="height:128px; color: #888; font-size: 0.8em">
+        <div class="container">
+            <hr>
+            <div class="pull-right">{{sub_version}}. Copyright &copy;{{this_year}}.</div>
+        </div>
+    </section>    
+    <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
+    
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="{{common}}/assets/js/jquery-1.js"></script>
+    <![endif]-->  
+    <!--[if (gte IE 9) | (!IE)]><!-->  
+        <script type="text/javascript" src="{{common}}/scripts/jquery.js"></script>
+    <!--<![endif]-->  
+    
+    <script type="text/javascript" src="{{common}}/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/waypoints-sticky.min.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/toastr.min.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/headhesive.min.js"></script>
+    <script type="text/javascript" src="{{theme}}/assets/js/scripts.js"></script>
+</body>
+</html>

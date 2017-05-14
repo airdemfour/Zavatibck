@@ -1,0 +1,64 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title">Edit Tax Payer</h4>
+</div>
+<div class="modal-body">
+     <div class="portlet-body form">
+                                <form role="form" method="POST" action="{{dir}}/taxpayer/edit" >
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label>Tax Payer Type</label>
+                                            <select name="payer_type" class="form-control">
+                                                <option value="0">Individual</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">First Name</label>
+                                            <div class="input-group">
+                                                <input name="firstname" type="text" class="form-control" id="exampleInputPassword1" value="{{firstname}}">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user font-green"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Surname</label>
+                                            <div class="input-group">
+                                                <input name="lastname" type="text" class="form-control" id="exampleInputPassword1" value="{{lastname}}">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user font-green"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Residential Address</label>
+                                            <textarea name="residential_address" class="form-control" rows="3">{{residential_address}}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Email</label>
+                                            <div class="input-group">
+                                                <input name = "email" type="text" class="form-control" id="exampleInputPassword1" value="{{email}}">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-envelope font-green"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Phone</label>
+                                            <div class="input-group">
+                                                <input type="text" name="phone" class="form-control" id="exampleInputPassword1" value="{{phone}}">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-phone font-green"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+<input type="hidden" name="id" value="{{id}}">
+<button type="submit" class="btn blue">Submit</button><button type="button" class="btn default" data-dismiss="modal">Close</button>
+                                </div>
+                                </form>
+</div>
