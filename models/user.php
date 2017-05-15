@@ -24,7 +24,7 @@ class User extends Zedek{
 		$password = md5($password);
 		$db = self::orm()->pdo;
 		$return = 0;
-		$q ="select usr_id, user_role from user where user_name = :username and password = :password";
+		$q ="select id from user where user_name = :username and password = :password";
 		try {
 			$query = $db->prepare($q);
 			$query->bindParam(':username', $username);
@@ -36,9 +36,9 @@ class User extends Zedek{
 		$res = $query->fetchObject();
 
 		if (is_object($res)) {
-			$return = $res->usr_id;
+			$return = $res->id;
 			$_SESSION["username"] = $username;
-			$_SESSION["role"] = $res->user_role;
+			//$_SESSION["role"] = $res->user_role;
 			//$_SESSION["role"] = $this->get_user_role($return);
 			//echo $_SESSION["role"];
 		}

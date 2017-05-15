@@ -16,11 +16,11 @@
                 <div class="panel-heading">
                 </div>
                 <div class="panel-body">
-                    <button href="{{dir}}/admin/new_role" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> New</button>
+                    <button href="{{dir}}/admin/new_role" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus fa-2x"></i> New</button>
                     <div class="stats-title pull-left">
                     </div>
                     <div class="stats-icon pull-right">
-                        <i class="pe-7s-monitor fa-4x"></i>
+                        <i class="fa fa-user-circle-o fa-3x"></i>
                     </div>
                     <div class="m-t-xl">
                         <h1 class="text-success">User Roles</h1>
@@ -50,11 +50,11 @@
                 <div class="panel-heading">
                 </div>
                 <div class="panel-body">
-                    <button href="{{dir}}/admin/new_user" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#new_user"><i class="fa fa-plus"></i> New</button>
+                    <button href="{{dir}}/admin/new_user" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#new_user"><i class="fa fa-user-plus fa-2x"></i> New</button>
                     <div class="stats-title pull-left">
                     </div>
                     <div class="stats-icon pull-right">
-                        <i class="pe-7s-monitor fa-4x"></i>
+                        <i class="fa fa-user-o fa-3x"></i>
                     </div>
                     <div class="m-t-xl">
                         <h1 class="text-success">Registered Users</h1>
@@ -83,6 +83,47 @@
          </div>
      </div>
  </div>
+
+
+<div class="row">
+    <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <button href="{{dir}}/admin/new_role" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus fa-2x"></i> New</button>
+                    <div class="stats-title pull-left">
+                    </div>
+                    <div class="stats-icon pull-right">
+                        <i class="fa fa-home fa-3x"></i>
+                    </div>
+                    <div class="m-t-xl">
+                        <h1 class="text-success">Unit Types</h1>
+                    </div>
+                    <div class="table-responsive">
+                        <table cellpadding="1" cellspacing="1" class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{roles}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    Roles
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
