@@ -7,7 +7,7 @@
 */
 namespace __zf__;
 
-class Admin extends Zedek{
+class project extends Zedek{
 	public $userrole;
 
 	static function orm(){
