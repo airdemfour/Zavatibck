@@ -7,7 +7,7 @@
 */
 namespace __zf__;
 
-class project extends Zedek{
+class Project extends Zedek{
 	public $userrole;
 
 	static function orm(){
@@ -18,8 +18,32 @@ class project extends Zedek{
 		return $orm;
 	}
 
-	
+	public function get_projects() {
+		$db = self::orm()->pdo;
+		$q ="select id, name, site_loc, start_date, end_date, description from project";
+		try {
+			$query = $db->prepare($q);
+			$query->execute();
+		} catch (Exception $e) {
+			echo "Cannot get Projects".$e->getMessage();
+		}
+		$result = $query->fetchAll();
+		return $result;
+	}
 
+	public function get_project($id) {
+		$db = self::orm()->pdo;
+		$q ="select id, name, site_loc, start_date, end_date, description from project where id = :id";
+		try {
+			$query = $db->prepare($q);
+			$query->bindParam(':id', $id);
+			$query->execute();
+		} catch (Exception $e) {
+			echo "Cannot get Project".$e->getMessage();
+		}
+		$result = $query->fetchObject();
+		return $result;
+	}
 
 	
 	

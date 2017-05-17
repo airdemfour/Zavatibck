@@ -91,7 +91,7 @@
                 <div class="panel-heading">
                 </div>
                 <div class="panel-body">
-                    <button href="{{dir}}/admin/new_role" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus fa-2x"></i> New</button>
+                    <button href="{{dir}}/admin/new_unit_type" class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#new_unit_type"><i class="fa fa-plus fa-2x"></i> New</button>
                     <div class="stats-title pull-left">
                     </div>
                     <div class="stats-icon pull-right">
@@ -109,14 +109,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{roles}}
+                                {{unit_types}}
                             </tbody>
                         </table>
                     </div>
 
                 </div>
                 <div class="panel-footer">
-                    Roles
+                    Unit Types
                 </div>
             </div>
         </div>
@@ -125,18 +125,15 @@
 
 
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="basic" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="color-line"></div>
             <div class="modal-header text-center">
-                <h4 class="modal-title">Modal title</h4>
-                <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+             
             </div>
             <div class="modal-body">
-                <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged.</p>
+               
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -146,18 +143,16 @@
         </div>
     </div>
 
-    <div class="modal fade" id="new_user" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="new_user" tabindex="-1" role="basic" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="color-line"></div>
                 <div class="modal-header text-center">
-                    <h4 class="modal-title">Modal title</h4>
-                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                    
+                    
                 </div>
                 <div class="modal-body">
-                    <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged.</p>
+                   
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -167,6 +162,25 @@
             </div>
         </div>
 
+
+<div class="modal fade" id="new_unit_type" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="color-line"></div>
+                <div class="modal-header text-center">
+                   
+                  
+                </div>
+                <div class="modal-body">
+                  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Vendor scripts -->
         <script src="{{theme}}/vendor/jquery/dist/jquery.min.js"></script>

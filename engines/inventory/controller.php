@@ -20,6 +20,8 @@ class CController extends ZController{
 
 	function index(){
 		$tmp = $this->app->tmp();
+		$tmp["page_title"] = "Inventory";
+		$tmp["page_subtitle"] = "Index";
 		self::render("index", $tmp);
 	}
 

@@ -18,6 +18,38 @@ class Admin extends Zedek{
 		return $orm;
 	}
 
+	public function get_unit_types() {
+		$db = self::orm()->pdo;
+		$q ="select id, name from unit_types";
+		try {
+			$query = $db->prepare($q);
+			$query->execute();
+		} catch (Exception $e) {
+			echo "Cannot get user types.".$e->getMessage();
+		}
+		$result = $query->fetchAll();
+		$final = "";
+		foreach ($result as $res) {
+			$final.= "<tr><td>{$res["name"]}</td><td><a href='#'><i class='fa fa-edit'></i> Edit</a></td></tr>";
+		}
+		return $final;
+	}
+
+	function create_new_unit_type (){
+		$db = self::orm()->pdo;
+		$q1 = "insert into unit_types (name) values (:name)";
+		try {
+			$db->begintransaction();
+			$query = $db->prepare($q1);
+			$query->bindParam(':name', $_POST["name"]);
+			$query->execute();
+			$db->commit();
+		} catch (Exception $e) {
+			echo "Cannot create Unit type ".$e->getMessage();
+			$db->rollback();
+		}
+
+	}
 	
 
 
