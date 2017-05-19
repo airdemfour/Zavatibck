@@ -23,7 +23,7 @@ class App extends ZModel{
 		//$count = $notifications->count_notifications();
 		//$tmp["nots"] = $nots;
 		$tmp["username"] = $_SESSION["username"];
-		$tmp["role"] = $_SESSION["role"];
+		//$tmp["role"] = $_SESSION["role"];
 		$tmp["page_controller"] = ucfirst($this->uri->controller);
 		$tmp["page_method"] = ucfirst($this->uri->method);
 		return $tmp;
